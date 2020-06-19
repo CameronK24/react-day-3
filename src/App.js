@@ -19,12 +19,14 @@ class App extends Component {
         <header>
           <h1>Home</h1>
         </header>
-        <section>
-          <div>
-
+        <section className='main-section'>
+          <div className='display-info'>
+            <p>Some Text</p>
           </div>
-          <button> {'<'} Previous</button>
-          <button>Next {'>'}</button>
+          <div className='display-btn'>
+            <button> {'<'} Previous</button>
+            <button>Next {'>'}</button>
+          </div>
         </section>
       </div>
     );
