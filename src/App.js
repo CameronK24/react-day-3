@@ -15,36 +15,40 @@ class App extends Component {
   }
 
   previous = () => {
-    console.log('this is working')
+    // console.log('this is working')
     let previousIndex = --this.state.currentIndex;
     console.log(previousIndex);
     if (this.state.currentIndex === -1) {
-      this.setState({currentIndex: 24})
+      this.setState({currentIndex: this.state.info.length - 1})
     }
     else {
       this.setState({currentIndex: previousIndex});
     }
-    console.log(this.state.currentIndex);
+    // console.log(this.state.currentIndex);
   }
 
   next = () => {
-    console.log('this is working');
+    // console.log('this is working');
     let nextIndex = ++this.state.currentIndex;
     console.log(nextIndex);
-    if (this.state.currentIndex === 25) {
+    if (this.state.currentIndex === this.state.info.length) {
       this.setState({currentIndex: 0})
     }
     else {
       this.setState({currentIndex: nextIndex});
     }
-    console.log(this.state.currentIndex);
+    // console.log(this.state.currentIndex);
+  }
+
+  deleteUser = () => {
+    let users = this.state.info;
+    // console.log(users[this.state.currentIndex]);
+    users.splice(this.state.currentIndex, 1);
+    // console.log(users.length);
+    this.setState({info: users});
   }
 
   render() {
-    // let display = this.state.info[this.state.currentIndex].map((element, index) => {
-    //   return <DisplayText key={index} userInfo={element} />
-    // })
-    // console.log(this.state.info[1].name);
     return (
       <div className="App">
         <header>
@@ -52,9 +56,9 @@ class App extends Component {
         </header>
         <section className='main-section'>
           <div className='display-info'>
-            <DisplayText userInfo={this.state.info[this.state.currentIndex]}/>
+            <DisplayText userInfo={this.state.info} currentUser={this.state.currentIndex}/>
           </div>
-          <CycleData nextUser={this.next} previousUser={this.previous}/>
+          <CycleData nextUser={this.next} previousUser={this.previous} delete={this.deleteUser}/>
         </section>
       </div>
     );

@@ -43,6 +43,14 @@ h1 {
   margin: 5% 10%;
 }
 
+.user-numbers {
+  position: absolute;
+  font-weight: bold;
+  right: 12%;
+  top: 23%;
+  font-size: 40px;
+}
+
 h2 {
   font-size: 60px;
   font-weight: bold;
@@ -78,8 +86,7 @@ h2 {
 
 .movies-section ol li {
   font-weight: normal;
-  margin-left: 7%;
-  
+  margin-left: 7%; 
 }
 
 .display-btn {
@@ -101,6 +108,18 @@ button {
   transition: 1s;
 }
 
+.display-btn button {
+  width: 15%;
+}
+
+#next-button {
+  text-align: right;
+}
+
+#prev-button {
+  text-align: left;
+}
+
 button:hover {
   background: white;
   color: #222222;
@@ -111,5 +130,20 @@ button:active {
   transition: .5s;
   background-color: rgb(87, 87, 87);
   color: white;
+}
+
+.special-btn {
+  background-color: #34a5da;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.special-btn:hover {
+  background: #25769c;
+  color: white;
+}
+
+.special-btn:active {
+  background: #15445a;
 }
 
